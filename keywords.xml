@@ -1,0 +1,102 @@
+<keywords slash="0.1a">
+	<set id="1">
+		<w>and</w>
+		<w>break</w>
+		<w>do</w>
+		<w>else</w>
+		<w>elseif</w>
+		<w>end</w>
+		<w>false</w>
+		<w>for</w>
+		<w>function</w>
+		<w>if</w>
+		<w>in</w>
+		<w>local</w>
+		<w>nil</w>
+		<w>not</w>
+		<w>or</w>
+		<w>repeat</w>
+		<w>return</w>
+		<w>then</w>
+		<w>true</w>
+		<w>until</w>
+		<w>while</w>
+	</set>
+	<set id="2">
+		<w>_G</w>
+		<w>assert</w>
+		<w>error</w>
+		<w>ipairs</w>
+		<w>next</w>
+		<w>pairs</w>
+		<w>pcall</w>
+		<w>rawequal</w>
+		<w>tonumber</w>
+		<w>tostring</w>
+		<w>type</w>
+		<w>xpcall</w>
+	</set>
+	<set id="3">
+		<w>math.abs</w>
+		<w>math.acos</w>
+		<w>math.asin</w>
+		<w>math.atan</w>
+		<w>math.atan2</w>
+		<w>math.ceil</w>
+		<w>math.cos</w>
+		<w>math.cosh</w>
+		<w>math.deg</w>
+		<w>math.exp</w>
+		<w>math.floor</w>
+		<w>math.fmod</w>
+		<w>math.frexp</w>
+		<w>math.huge</w>
+		<w>math.ldexp</w>
+		<w>math.log</w>
+		<w>math.log10</w>
+		<w>math.max</w>
+		<w>math.min</w>
+		<w>math.modf</w>
+		<w>math.pi</w>
+		<w>math.pow</w>
+		<w>math.rad</w>
+		<w>math.random</w>
+		<w>math.randomseed</w>
+		<w>math.sin</w>
+		<w>math.sinh</w>
+		<w>math.sqrt</w>
+		<w>math.tan</w>
+		<w>math.tanh</w>
+		<w>string.byte</w>
+		<w>string.char</w>
+		<w>string.dump</w>
+		<w>string.find</w>
+		<w>string.format</w>
+		<w>string.gmatch</w>
+		<w>string.gsub</w>
+		<w>string.len</w>
+		<w>string.lower</w>
+		<w>string.match</w>
+		<w>string.rep</w>
+		<w>string.reverse</w>
+		<w>string.sub</w>
+		<w>string.upper</w>
+		<w>table.concat</w>
+		<w>table.foreach</w>
+		<w>table.foreachi</w>
+		<w>table.getn</w>
+		<w>table.insert</w>
+		<w>table.maxn</w>
+		<w>table.remove</w>
+		<w>table.sort</w>
+	</set>
+	<set id="4">
+		<w>os.date</w>
+		<w>os.difftime</w>
+		<w>os.time</w>
+	</set>
+	<set id="5"></set>
+	<set id="6"></set>
+	<set id="7"></set>
+	<set id="8"></set>
+</keywords>

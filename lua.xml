@@ -1,0 +1,80 @@
+<transformice api="0.9" slash="0.1a" name="Transformice Lua Api">
+	<namespace name="" desc="Global namespace">
+		<function name="assert" params="">assert</function>
+		<function name="error" params="">error</function>
+		<function name="ipairs" params="">ipairs</function>
+		<function name="next" params="">next</function>
+		<function name="pairs" params="">pairs</function>
+		<function name="pcall" params="">pcall</function>
+		<function name="rawequal" params="">rawequal</function>
+		<function name="tonumber" params="">tonumber</function>
+		<function name="tostring" params="">tostring</function>
+		<function name="type" params="">type</function>
+		<function name="xpcall" params="">xpcall</function>
+		<namespace name="_G" desc="_G namespace">
+		</namespace>
+		<namespace name="math" desc="Math namespace">
+			<function name="abs" params="">abs</function>
+			<function name="acos" params="">acos</function>
+			<function name="asin" params="">asin</function>
+			<function name="atan" params="">atan</function>
+			<function name="atan2" params="">atan2</function>
+			<function name="ceil" params="">ceil</function>
+			<function name="cos" params="">cos</function>
+			<function name="cosh" params="">cosh</function>
+			<function name="deg" params="">deg</function>
+			<function name="exp" params="">exp</function>
+			<function name="floor" params="">floor</function>
+			<function name="fmod" params="">fmod</function>
+			<function name="frexp" params="">frexp</function>
+			<function name="huge" params="">huge</function>
+			<function name="ldexp" params="">ldexp</function>
+			<function name="log" params="">log</function>
+			<function name="log10" params="">log10</function>
+			<function name="max" params="">max</function>
+			<function name="min" params="">min</function>
+			<function name="modf" params="">modf</function>
+			<function name="pi" params="">pi</function>
+			<function name="pow" params="">pow</function>
+			<function name="rad" params="">rad</function>
+			<function name="random" params="">random</function>
+			<function name="randomseed" params="">randomseed</function>
+			<function name="sin" params="">sin</function>
+			<function name="sinh" params="">sinh</function>
+			<function name="sqrt" params="">sqrt</function>
+			<function name="tan" params="">tan</function>
+			<function name="tanh" params="">tanh</function>
+		</namespace>
+		<namespace name="os" desc="os namespace">
+			<function name="date" params="">date</function>
+			<function name="difftime" params="">difftime</function>
+			<function name="time" params="">time</function>
+		</namespace>
+		<namespace name="string" desc="string namespace">
+			<function name="byte" params="">byte</function>
+			<function name="char" params="">char</function>
+			<function name="dump" params="">dump</function>
+			<function name="find" params="">find</function>
+			<function name="format" params="">format</function>
+			<function name="gmatch" params="">gmatch</function>
+			<function name="gsub" params="">gsub</function>
+			<function name="len" params="">len</function>
+			<function name="lower" params="">lower</function>
+			<function name="match" params="">match</function>
+			<function name="rep" params="">rep</function>
+			<function name="reverse" params="">reverse</function>
+			<function name="sub" params="">sub</function>
+			<function name="upper" params="">upper</function>
+		</namespace>
+		<namespace name="table" desc="table namespace">
+			<function name="concat" params="">concat</function>
+			<function name="foreach" params="">foreach</function>
+			<function name="foreachi" params="">foreachi</function>
+			<function name="getn" params="">getn</function>
+			<function name="insert" params="">insert</function>
+			<function name="maxn" params="">maxn</function>
+			<function name="remove" params="">remove</function>
+			<function name="sort" params="">sort</function>
+		</namespace>
+	</namespace>
+</transformice>

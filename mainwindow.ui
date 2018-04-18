@@ -1,0 +1,1144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Segoe UI</family>
+    <pointsize>9</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Slash Lua IDE Slash Lua IDE</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>-1</number>
+      </property>
+      <property name="documentMode">
+       <bool>true</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>true</bool>
+      </property>
+      <property name="movable">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="Finder" name="finder" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionReload"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSaveAs"/>
+    <addaction name="actionSaveCopy"/>
+    <addaction name="separator"/>
+    <addaction name="actionClose"/>
+    <addaction name="actionCloseAll"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>?</string>
+    </property>
+    <addaction name="actionAbout"/>
+    <addaction name="actionAboutQt"/>
+    <addaction name="actionAboutLua"/>
+    <addaction name="actionAbout_Transformice"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <widget class="QMenu" name="menuLines">
+     <property name="title">
+      <string>Lines</string>
+     </property>
+     <addaction name="actionMoveUp"/>
+     <addaction name="actionMoveDown"/>
+     <addaction name="separator"/>
+     <addaction name="actionDuplicateLine"/>
+     <addaction name="actionCutLine"/>
+     <addaction name="actionCopyLine"/>
+     <addaction name="actionDeleteLine"/>
+     <addaction name="separator"/>
+     <addaction name="actionSplitLines"/>
+     <addaction name="actionJoinLines"/>
+    </widget>
+    <widget class="QMenu" name="menuBlock">
+     <property name="title">
+      <string>Block</string>
+     </property>
+     <addaction name="actionIndent"/>
+     <addaction name="actionUnindent"/>
+     <addaction name="separator"/>
+     <addaction name="actionEncloseSelection"/>
+     <addaction name="actionDuplicateSelection"/>
+     <addaction name="separator"/>
+     <addaction name="actionPadWithSpaces"/>
+     <addaction name="actionStripTrailingBlanks"/>
+     <addaction name="actionCompressWhitespace"/>
+     <addaction name="actionRemoveBlankLines"/>
+     <addaction name="separator"/>
+     <addaction name="actionModifyLines"/>
+     <addaction name="actionSortLines"/>
+    </widget>
+    <widget class="QMenu" name="menuConvert">
+     <property name="title">
+      <string>Convert</string>
+     </property>
+     <addaction name="actionUppercase"/>
+     <addaction name="actionLowercase"/>
+     <addaction name="separator"/>
+     <addaction name="actionInvertCase"/>
+     <addaction name="separator"/>
+     <addaction name="actionTabifySelection"/>
+     <addaction name="actionUntabifySelection"/>
+     <addaction name="separator"/>
+     <addaction name="actionTabifyIndent"/>
+     <addaction name="actionUntabifyIndent"/>
+     <addaction name="separator"/>
+     <addaction name="actionToggleEncoding"/>
+    </widget>
+    <widget class="QMenu" name="menuSpecial">
+     <property name="title">
+      <string>Special</string>
+     </property>
+     <addaction name="actionToggleLineComment"/>
+     <addaction name="separator"/>
+     <addaction name="actionFindMatchingBrace"/>
+     <addaction name="actionSelectToMatchingBrace"/>
+    </widget>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="separator"/>
+    <addaction name="actionCut"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionCopyAll"/>
+    <addaction name="actionPaste"/>
+    <addaction name="actionClear"/>
+    <addaction name="actionClearClipboard"/>
+    <addaction name="actionSelectAll"/>
+    <addaction name="separator"/>
+    <addaction name="menuLines"/>
+    <addaction name="menuBlock"/>
+    <addaction name="menuConvert"/>
+    <addaction name="menuSpecial"/>
+    <addaction name="separator"/>
+    <addaction name="actionFind"/>
+    <addaction name="actionFindPrevious"/>
+    <addaction name="actionFindNext"/>
+    <addaction name="actionReplace"/>
+    <addaction name="actionGoto"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionCustomizeScheme"/>
+    <addaction name="actionDefaultFont"/>
+    <addaction name="separator"/>
+    <addaction name="actionWordWrap"/>
+    <addaction name="actionLongLineMarker"/>
+    <addaction name="actionIndentationGuides"/>
+    <addaction name="separator"/>
+    <addaction name="actionShowWhitespace"/>
+    <addaction name="actionShowLineEndings"/>
+    <addaction name="separator"/>
+    <addaction name="actionVisualBraceMatching"/>
+    <addaction name="actionHighlightCurrentLine"/>
+    <addaction name="separator"/>
+    <addaction name="actionLineNumbers"/>
+    <addaction name="separator"/>
+    <addaction name="actionZoomIn"/>
+    <addaction name="actionZoomOut"/>
+    <addaction name="actionResetZoom"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <widget class="QMenu" name="menuEsc_Key_Function">
+     <property name="title">
+      <string>Esc Key Function</string>
+     </property>
+     <addaction name="actionEscNone"/>
+     <addaction name="actionEscMinimize"/>
+     <addaction name="actionEscExit"/>
+    </widget>
+    <addaction name="actionInsertTabsAsSpaces"/>
+    <addaction name="actionTabSettings"/>
+    <addaction name="actionWordWrapSettings"/>
+    <addaction name="actionLongLineSettings"/>
+    <addaction name="actionAutoIndentText"/>
+    <addaction name="actionAutoCloseMarkupTag"/>
+    <addaction name="separator"/>
+    <addaction name="menuEsc_Key_Function"/>
+    <addaction name="separator"/>
+    <addaction name="actionSaveSettingsOnExit"/>
+    <addaction name="actionSaveSettingsNow"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
+   <addaction name="menuSettings"/>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="windowTitle">
+    <string>Main toolbar</string>
+   </property>
+   <property name="accessibleName">
+    <string>Main toolbar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="accessibleName">
+    <string>Status bar</string>
+   </property>
+  </widget>
+  <action name="actionNew">
+   <property name="text">
+    <string>New</string>
+   </property>
+   <property name="toolTip">
+    <string>Create a new blank file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open...</string>
+   </property>
+   <property name="toolTip">
+    <string>Open a file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionReload">
+   <property name="text">
+    <string>Reload</string>
+   </property>
+   <property name="toolTip">
+    <string>Reload file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="toolTip">
+    <string>Save the current file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionSaveAs">
+   <property name="text">
+    <string>Save As...</string>
+   </property>
+   <property name="toolTip">
+    <string>Save current file as</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionSaveCopy">
+   <property name="text">
+    <string>Save Copy...</string>
+   </property>
+   <property name="toolTip">
+    <string>Save a copy of current file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+S</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="toolTip">
+    <string>Close the aplication</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close</string>
+   </property>
+   <property name="toolTip">
+    <string>Close the current file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F4</string>
+   </property>
+  </action>
+  <action name="actionCloseAll">
+   <property name="text">
+    <string>Close All</string>
+   </property>
+   <property name="toolTip">
+    <string>Close all open files</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About...</string>
+   </property>
+   <property name="toolTip">
+    <string>About the author</string>
+   </property>
+  </action>
+  <action name="actionAboutQt">
+   <property name="text">
+    <string>About Qt...</string>
+   </property>
+   <property name="toolTip">
+    <string>About Qt Toolkit for C++</string>
+   </property>
+  </action>
+  <action name="actionFind">
+   <property name="text">
+    <string>Find...</string>
+   </property>
+   <property name="toolTip">
+    <string>Find sentence</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionReplace">
+   <property name="text">
+    <string>Replace...</string>
+   </property>
+   <property name="toolTip">
+    <string>Replace sentence</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="actionFindNext">
+   <property name="text">
+    <string>Find Next</string>
+   </property>
+   <property name="toolTip">
+    <string>Find next sentence</string>
+   </property>
+   <property name="shortcut">
+    <string>F3</string>
+   </property>
+  </action>
+  <action name="actionFindPrevious">
+   <property name="text">
+    <string>Find Previous</string>
+   </property>
+   <property name="toolTip">
+    <string>Find Previous sentence</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+F3</string>
+   </property>
+  </action>
+  <action name="actionGoto">
+   <property name="text">
+    <string>Goto...</string>
+   </property>
+   <property name="toolTip">
+    <string>Go to line and index</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="text">
+    <string>Undo</string>
+   </property>
+   <property name="toolTip">
+    <string>Undo edition</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="text">
+    <string>Redo</string>
+   </property>
+   <property name="toolTip">
+    <string>Redo edition</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="text">
+    <string>Cut</string>
+   </property>
+   <property name="toolTip">
+    <string>Cut selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="text">
+    <string>Copy</string>
+   </property>
+   <property name="toolTip">
+    <string>Copy selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionCopyAll">
+   <property name="text">
+    <string>Copy All</string>
+   </property>
+   <property name="toolTip">
+    <string>Copy all text</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+C</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="text">
+    <string>Paste</string>
+   </property>
+   <property name="toolTip">
+    <string>Paste text</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionClear">
+   <property name="text">
+    <string>Clear</string>
+   </property>
+   <property name="toolTip">
+    <string>Clear selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="actionClearClipboard">
+   <property name="text">
+    <string>Clear Clipboard</string>
+   </property>
+   <property name="toolTip">
+    <string>Clear clipboard</string>
+   </property>
+  </action>
+  <action name="actionSelectAll">
+   <property name="text">
+    <string>Select All</string>
+   </property>
+   <property name="toolTip">
+    <string>Select all text</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actionMoveUp">
+   <property name="text">
+    <string>Move Up</string>
+   </property>
+   <property name="toolTip">
+    <string>Move current line up</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+Up</string>
+   </property>
+  </action>
+  <action name="actionMoveDown">
+   <property name="text">
+    <string>Move Down</string>
+   </property>
+   <property name="toolTip">
+    <string>Move current line down</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+Down</string>
+   </property>
+  </action>
+  <action name="actionDuplicateLine">
+   <property name="text">
+    <string>Duplicate Line</string>
+   </property>
+   <property name="toolTip">
+    <string>Duplicate current line</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionDeleteLine">
+   <property name="text">
+    <string>Delete Line</string>
+   </property>
+   <property name="toolTip">
+    <string>Delete current line</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+D</string>
+   </property>
+  </action>
+  <action name="actionCutLine">
+   <property name="text">
+    <string>Cut Line</string>
+   </property>
+   <property name="toolTip">
+    <string>Cut current line</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+X</string>
+   </property>
+  </action>
+  <action name="actionCopyLine">
+   <property name="text">
+    <string>Copy Line</string>
+   </property>
+   <property name="toolTip">
+    <string>Copy current line</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+C</string>
+   </property>
+  </action>
+  <action name="actionJoinLines">
+   <property name="text">
+    <string>Join Lines</string>
+   </property>
+   <property name="toolTip">
+    <string>Join selected lines</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+J</string>
+   </property>
+  </action>
+  <action name="actionSplitLines">
+   <property name="text">
+    <string>Split Lines</string>
+   </property>
+   <property name="toolTip">
+    <string>Split selected lines</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionIndent">
+   <property name="text">
+    <string>Indent</string>
+   </property>
+   <property name="toolTip">
+    <string>Indent selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Tab</string>
+   </property>
+  </action>
+  <action name="actionUnindent">
+   <property name="text">
+    <string>Unindent</string>
+   </property>
+   <property name="toolTip">
+    <string>Unindent selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+Tab</string>
+   </property>
+  </action>
+  <action name="actionEncloseSelection">
+   <property name="text">
+    <string>Enclose Selection...</string>
+   </property>
+   <property name="toolTip">
+    <string>Enclose selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+Q</string>
+   </property>
+  </action>
+  <action name="actionDuplicateSelection">
+   <property name="text">
+    <string>Duplicate Selection</string>
+   </property>
+   <property name="toolTip">
+    <string>Duplicate selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+D</string>
+   </property>
+  </action>
+  <action name="actionPadWithSpaces">
+   <property name="text">
+    <string>Pad With Spaces</string>
+   </property>
+   <property name="toolTip">
+    <string>Pad selection with spaces</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+B</string>
+   </property>
+  </action>
+  <action name="actionStripTrailingBlanks">
+   <property name="text">
+    <string>Strip Trailing Blanks</string>
+   </property>
+   <property name="toolTip">
+    <string>Strip trailing blanks from selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+W</string>
+   </property>
+  </action>
+  <action name="actionCompressWhitespace">
+   <property name="text">
+    <string>Compress Whitespace</string>
+   </property>
+   <property name="toolTip">
+    <string>Compress whitespace in selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+P</string>
+   </property>
+  </action>
+  <action name="actionRemoveBlankLines">
+   <property name="text">
+    <string>Remove Blank Lines</string>
+   </property>
+   <property name="toolTip">
+    <string>Remove blank lines from selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+R</string>
+   </property>
+  </action>
+  <action name="actionModifyLines">
+   <property name="text">
+    <string>Modify Lines...</string>
+   </property>
+   <property name="toolTip">
+    <string>Modify selected lines</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+M</string>
+   </property>
+  </action>
+  <action name="actionSortLines">
+   <property name="text">
+    <string>Sort Lines...</string>
+   </property>
+   <property name="toolTip">
+    <string>Sort selected lines</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+O</string>
+   </property>
+  </action>
+  <action name="actionUppercase">
+   <property name="text">
+    <string>Uppercase</string>
+   </property>
+   <property name="toolTip">
+    <string>Convert selected text to uppercase</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+U</string>
+   </property>
+  </action>
+  <action name="actionLowercase">
+   <property name="text">
+    <string>Lowercase</string>
+   </property>
+   <property name="toolTip">
+    <string>Convert selected text to lowercase</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="actionInvertCase">
+   <property name="text">
+    <string>Invert Case</string>
+   </property>
+   <property name="toolTip">
+    <string>Invert case of selected text</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+U</string>
+   </property>
+  </action>
+  <action name="actionTabifySelection">
+   <property name="text">
+    <string>Tabify Selection</string>
+   </property>
+   <property name="toolTip">
+    <string>Convert spaces into tabs in selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+T</string>
+   </property>
+  </action>
+  <action name="actionUntabifySelection">
+   <property name="text">
+    <string>Untabify Selection</string>
+   </property>
+   <property name="toolTip">
+    <string>Convert tabs into spaces in selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+T</string>
+   </property>
+  </action>
+  <action name="actionTabifyIndent">
+   <property name="text">
+    <string>Tabify Indent</string>
+   </property>
+   <property name="toolTip">
+    <string>Convert spaces into tabs in selection indentation</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+I</string>
+   </property>
+  </action>
+  <action name="actionUntabifyIndent">
+   <property name="text">
+    <string>Untabify Indent</string>
+   </property>
+   <property name="toolTip">
+    <string>Convert tabs into spaces in selection indentation</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+I</string>
+   </property>
+  </action>
+  <action name="actionToggleLineComment">
+   <property name="text">
+    <string>Toggle Line Comment</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+K</string>
+   </property>
+  </action>
+  <action name="actionFindMatchingBrace">
+   <property name="text">
+    <string>Find Matching Brace</string>
+   </property>
+   <property name="toolTip">
+    <string>Find matching brace</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="actionSelectToMatchingBrace">
+   <property name="text">
+    <string>Select To Matching Brace</string>
+   </property>
+   <property name="toolTip">
+    <string>Select to matching brace</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+B</string>
+   </property>
+  </action>
+  <action name="actionDefaultFont">
+   <property name="text">
+    <string>Default Font...</string>
+   </property>
+   <property name="toolTip">
+    <string>Change default font</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+F12</string>
+   </property>
+  </action>
+  <action name="actionCustomizeScheme">
+   <property name="text">
+    <string>Customize Scheme...</string>
+   </property>
+   <property name="toolTip">
+    <string>Customize highligth scheme</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F12</string>
+   </property>
+  </action>
+  <action name="actionWordWrap">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Word Wrap</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle word wrapping</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="actionLongLineMarker">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Long Line Marker</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle long line marker</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+L</string>
+   </property>
+  </action>
+  <action name="actionIndentationGuides">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Indentation Guides</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle indentation guides</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+G</string>
+   </property>
+  </action>
+  <action name="actionShowWhitespace">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Whitespace</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle whitespace visibility</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+8</string>
+   </property>
+  </action>
+  <action name="actionShowLineEndings">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Line Endings</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle line endings visibility</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+9</string>
+   </property>
+  </action>
+  <action name="actionVisualBraceMatching">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Visual Brace Matching</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle visual brace matching</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+V</string>
+   </property>
+  </action>
+  <action name="actionHighlightCurrentLine">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Highlight Current Line</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle current line highlight</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+V</string>
+   </property>
+  </action>
+  <action name="actionLineNumbers">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Line Numbers</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle line numbers visibility</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+N</string>
+   </property>
+  </action>
+  <action name="actionZoomIn">
+   <property name="text">
+    <string>Zoom In</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom in</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl++</string>
+   </property>
+  </action>
+  <action name="actionZoomOut">
+   <property name="text">
+    <string>Zoom Out</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom out</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+-</string>
+   </property>
+  </action>
+  <action name="actionResetZoom">
+   <property name="text">
+    <string>Reset Zoom</string>
+   </property>
+   <property name="toolTip">
+    <string>Reset zoom</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+/</string>
+   </property>
+  </action>
+  <action name="actionInsertTabsAsSpaces">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Insert Tabs as Spaces</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle insert tabs as spaces</string>
+   </property>
+  </action>
+  <action name="actionTabSettings">
+   <property name="text">
+    <string>Tab Settings...</string>
+   </property>
+   <property name="toolTip">
+    <string>Edit tab Settings</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionWordWrapSettings">
+   <property name="text">
+    <string>Word Wrap Settings...</string>
+   </property>
+   <property name="toolTip">
+    <string>Edit word wrap settings</string>
+   </property>
+  </action>
+  <action name="actionLongLineSettings">
+   <property name="text">
+    <string>Long Line Settings...</string>
+   </property>
+   <property name="toolTip">
+    <string>Edit long line settings</string>
+   </property>
+  </action>
+  <action name="actionAutoIndentText">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Auto Indent Text</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle auto indent text</string>
+   </property>
+  </action>
+  <action name="actionAutoCloseMarkupTag">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Auto Close HTML/XML</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle auto close HTML/XML</string>
+   </property>
+  </action>
+  <action name="actionEscNone">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>None</string>
+   </property>
+   <property name="toolTip">
+    <string>No action for ESC key</string>
+   </property>
+  </action>
+  <action name="actionEscMinimize">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Minimize Slash Lua IDE</string>
+   </property>
+   <property name="toolTip">
+    <string>Minimize slash lua ide with ESC key</string>
+   </property>
+  </action>
+  <action name="actionEscExit">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Exit Slash Lua IDE</string>
+   </property>
+   <property name="toolTip">
+    <string>Exit slash lua ide with ESC key</string>
+   </property>
+  </action>
+  <action name="actionSaveSettingsOnExit">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Save Settings On Exit</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle save settings on exit</string>
+   </property>
+  </action>
+  <action name="actionSaveSettingsNow">
+   <property name="text">
+    <string>Save Settings Now</string>
+   </property>
+   <property name="toolTip">
+    <string>Save current settings now</string>
+   </property>
+   <property name="shortcut">
+    <string>F7</string>
+   </property>
+  </action>
+  <action name="actionAboutLua">
+   <property name="text">
+    <string>About Lua...</string>
+   </property>
+   <property name="toolTip">
+    <string>About the lua programming language</string>
+   </property>
+  </action>
+  <action name="actionAbout_Transformice">
+   <property name="text">
+    <string>About Transformice!...</string>
+   </property>
+   <property name="toolTip">
+    <string>About the Transformice! game</string>
+   </property>
+  </action>
+  <action name="actionToggleEncoding">
+   <property name="text">
+    <string>Toggle UTF-8/ASCII Encoding</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle UTF-8/ASCII encoding</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>Finder</class>
+   <extends>QWidget</extends>
+   <header>finder.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

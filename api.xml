@@ -1,0 +1,132 @@
+<transformice api="0.9" slash="0.1a" name="Transformice API">
+	<namespace name="" desc="Global namespace">
+		<function name="print" params="String something">Print something.</function>
+		<event name="eventChatCommand" params="String playerName, String message">This event triggers when the player types a message beginning with « ! » in the chat.</event>
+		<event name="eventEmotePlayed" params="String playerName, Int emoteId">This event triggers when the player does an emote.</event>
+		<event name="eventFileLoaded" params="String fileName, String file">This event triggers when a file is loaded.</event>
+		<event name="eventFileSaved" params="String fileName">This event triggers when a file is saved.</event>
+		<event name="eventKeyboard" params="String playerName, Int keyCode, Boolean down, Int xPlayerPosition, Int yPlayerPosition">This event triggers when a player presses a key.</event>
+		<event name="eventLoop" params="Int currentTime, Int timeRemaining">This event occurs every 500 miliseconds.</event>
+		<event name="eventNewGame" params="">This event triggers at the start of a new game.</event>
+		<event name="eventNewPlayer" params="String playerName">This event triggers when a new player joins the room.</event>
+		<event name="eventPlayerDied" params="String playerName">This event triggers when a player dies.</event>
+		<event name="eventPlayerGetCheese" params="String playerName">This event triggers when a player gets the cheese.</event>
+		<event name="eventPlayerLeft" params="String playerName">This event triggers when a player leaves the room.</event>
+		<event name="eventPlayerVampire" params="String playerName">This event triggers when a player transforms into a vampire.</event>
+		<event name="eventPlayerWon" params="String playerName">This event triggers when a player wins the round.</event>
+		<event name="eventSummoningStart" params="String playerName, Int objectType, Int xPosition, Int yPosition, Int angle">This event triggers when a player starts an invocation.</event>
+		<event name="eventSummoningCancel" params="String playerName">This event triggers when a player cancels an invocation.</event>
+		<event name="eventSummoningEnd" params="String playerName, Int objectType, Int xPosition, Int yPosition, Int angle, Int xSpeed, Int ySpeed, Table other">This event triggers when a player has finished an invocation.</event>
+	</namespace>
+	<namespace name="system" desc="system namespace">
+		<function name="exit" params="">Deactivates the lua script running.</function>
+		<function name="newTimer" params="Function callback, Int time, Boolean loop, Object arg1, Object arg2, Object arg3, Object arg4">Create a new timer. Return the new timer id. Use system.removeTimer(timerId) to stop a timer.</function>
+		<function name="removeTimer" params="Int timerId">Remove a timer.</function>
+		<function name="loadFile" params="">Load a file. Call limited to once per 10 minutes. Returns true if loading has started.</function>
+		<function name="saveFile" params="String data">Save a file. Call limited to once per 10 minutes. Returns true if saving has started.</function>
+		<function name="disableChatCommandDisplay" params="String command, Boolean yes">Deactivates the display of a command in the chat window (100 max).</function>
+	</namespace>
+	<namespace name="debug" desc="debug namespace">
+		<function name="disableEventLog" params="Boolean yes">Deactivates the events log.</function>
+		<function name="disableTimerLog" params="Boolean yes">Deactivates the timers log.</function>
+	</namespace>
+	<namespace name="tfm" desc="tfm namespace">
+		<namespace name="exec" desc="tfm.exec namespace">
+			<function name="addShamanObject" params="Int objectId, Int xPosition, Int yPosition, Int angle, Int xSpeed, Int ySpeed, Boolean ghost">Adds a Shaman object into the game.</function>
+			<function name="bindKeyboard" params="String playerName, Int keyCode, Boolean down, Boolean yes">Listens to the player's keyboard events.</function>
+			<function name="chatMessage" params="String message, String playerName">Sends a message to all the players in the room. If playerName isn't NIL, the message is sent to this player only.</function>
+			<function name="disableAutoNewGame" params="Boolean yes">Deactivates the automatic renewal of rounds.</function>
+			<function name="disableAutoScore" params="Boolean yes">Deactivates the automatic scoring management.</function>
+			<function name="disableAutoShaman" params="Boolean yes">Deactivates the automatic selection of Shaman.</function>
+			<function name="disableAutoTimeLeft" params="Boolean yes">Deactivates the automatic time change.</function>
+			<function name="explosion" params="Int xPosition, Int yPosition, Int power, Int distance, Boolean miceOnly">Throw an explosion.</function>
+			<function name="giveCheese" params="String playerName">Gives the cheese to a player.</function>
+			<function name="giveMeep" params="String playerName">Gives the meep competence to a player.</function>
+			<function name="killPlayer" params="String playerName">Kills the selected player.</function>
+			<function name="moveObject" params="Int objectId, Int xPosition, Int yPosition, Boolean offset, Int xSpeed, Int ySpeed, Boolean offset">Defines the speed and position of an object.</function>
+			<function name="movePlayer" params="String playerName, Int xPosition, Int yPosition, Boolean offset, Int xSpeed, Int ySpeed, Boolean offset">Defines the speed and position of a player.</function>
+			<function name="newGame" params="String mapCode">Launch a new game.</function>
+			<function name="playerVictory" params="String playerName">Gives the victory to a player.</function>
+			<function name="removeObject" params="Int objectId">Remove a physical object.</function>
+			<function name="respawnPlayer" params="String playerName">Respawn a player.</function>
+			<function name="setNameColor" params="String playerName, Int color">Changes the player's name's color.</function>
+			<function name="setPlayerScore" params="String playerName, Int score, Boolean add">Set the player's score.</function>
+			<function name="setRoomMaxPlayers" params="Int maxPlayers">Sets the max number of players in a room.</function>
+			<function name="setGameTime" params="Int seconds, Boolean init">Set the game time.</function>
+			<function name="setVampirePlayer" params="String playerName">Set player as vampire.</function>
+			<function name="snow" params="">Makes the snow fall.</function>
+		</namespace>
+		<namespace name="enum" desc="tfm.enum namespace">
+			<namespace name="emote" desc="tfm.enum.emote namespace">
+				<enum name="dance" value="0" replace="false">Dance</enum>
+				<enum name="laugh" value="1" replace="false">Laugh</enum>
+				<enum name="cry" value="2" replace="false">Cry</enum>
+				<enum name="kiss" value="3" replace="false">Kiss</enum>
+				<enum name="angry" value="4" replace="false">Angry</enum>
+				<enum name="clap" value="5" replace="false">Clap</enum>
+				<enum name="sleep" value="6" replace="false">Sleep</enum>
+				<enum name="facepaw" value="7" replace="false">Facepaw</enum>
+				<enum name="sit" value="8" replace="false">Sit</enum>
+				<enum name="confetti" value="9" replace="false">Confetti</enum>
+			</namespace>
+			<namespace name="shamanObject" desc="tfm.enum.shamanObject namespace">
+				<enum name="arrow" value="0" replace="false">Arrow</enum>
+				<enum name="littleBox" value="1" replace="false">Little box</enum>
+				<enum name="box" value="2" replace="false">Box</enum>
+				<enum name="littleBoard" value="3" replace="false">Little board</enum>
+				<enum name="board" value="4" replace="false">Board</enum>
+				<enum name="ball" value="6" replace="false">Ball</enum>
+				<enum name="trampoline" value="7" replace="false">Trampoline</enum>
+				<enum name="anvil" value="10" replace="false">Anvil</enum>
+				<enum name="redAnchor" value="11" replace="true">Red anchor</enum>
+				<enum name="redAnchorClockwise" value="12" replace="true">Rotating red anchor (clockwise)</enum>
+				<enum name="redAnchorCounterClockwise" value="13" replace="true">Rotating red anchor (counter-clockwise)</enum>
+				<enum name="greenAnchor" value="14" replace="true">Green anchor</enum>
+				<enum name="greenAnchorClockwise" value="15" replace="true">Rotating green anchor (clockwise)</enum>
+				<enum name="greenAnchorCounterClockwise" value="16" replace="true">Rotating green anchor (counter-clockwise)</enum>
+				<enum name="cannonUp" value="17" replace="true">Cannon up</enum>
+				<enum name="cannonDown" value="18" replace="true">Cannon down</enum>
+				<enum name="cannon" value="19" replace="false">Cannon right</enum>
+				<enum name="cannonRight" value="19" replace="true">Cannon right</enum>
+				<enum name="cannonLeft" value="20" replace="true">Cannon left</enum>
+				<enum name="yellowAnchor" value="22" replace="true">Yellow anchor</enum>
+				<enum name="bomb" value="23" replace="false">Bomb</enum>
+				<enum name="spirit" value="24" replace="true">Spirit</enum>
+				<enum name="bait" value="25" replace="true">Fake cheese</enum>
+				<enum name="bluePortal" value="26" replace="true">Blue portal</enum>
+				<enum name="orangePortal" value="27" replace="true">Orange portal</enum>
+				<enum name="balloon" value="28" replace="false">Balloon</enum>
+				<enum name="redBalloon" value="29" replace="true">Red balloon</enum>
+				<enum name="greenBalloon" value="30" replace="true">Green balloon</enum>
+				<enum name="yellowBalloon" value="31" replace="true">Yellow balloon</enum>
+				<enum name="rune" value="32" replace="false">Rune</enum>
+				<enum name="snowBall" value="34" replace="false">Snow ball</enum>
+				<enum name="valentineArrow" value="35" replace="true">Valentine's arrow</enum>
+				<enum name="totem" value="44" replace="true">Totem</enum>
+				<enum name="transformationSmallBox" value="48" replace="true">Transformation small box</enum>
+				<enum name="transformationLargeBox" value="49" replace="true">Transformation large box</enum>
+				<enum name="transformationAnvil" value="50" replace="true">Transformation anvil</enum>
+				<enum name="transformationSmallPlank" value="51" replace="true">Transformation small plank</enum>
+				<enum name="transformationLargePlank" value="52" replace="true">Transformation large plank</enum>
+				<enum name="transformationMouse" value="53" replace="true">Transformation mouse</enum>
+				<enum name="iceCube" value="54" replace="false">Ice cube</enum>
+				<enum name="balloonAnchor" value="66" replace="true">Balloon anchor</enum>
+				<enum name="windmillAnchor" value="88" replace="true">Windmill anchor</enum>
+			</namespace>
+		</namespace>
+		<namespace name="get" desc="tfm.get namespace">
+			<namespace name="misc" desc="tfm.get.misc namespace">
+				<var name="apiVersion">Api version</var>
+				<var name="transformiceVersion">Transformice version</var>
+			</namespace>
+			<namespace name="room" desc="tfm.get.room namespace">
+				<var name="community">Community</var>
+				<var name="currentMap">Current map</var>
+				<var name="maxPlayers">Max players</var>
+				<var name="objectList">Object list</var>
+				<var name="name">Room name</var>
+				<var name="playerList">Player list</var>
+			</namespace>
+		</namespace>
+	</namespace>
+</transformice>

@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/auto">
+        <file>blue.png</file>
+        <file>red.png</file>
+        <file>orange.png</file>
+        <file>green.png</file>
+    </qresource>
+    <qresource prefix="/file">
+        <file>file_blue.png</file>
+        <file>file_red.png</file>
+    </qresource>
+    <qresource prefix="/slash">
+        <file>slash.ico</file>
+    </qresource>
+</RCC>
