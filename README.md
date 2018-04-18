@@ -1,5 +1,5 @@
 # slash-ide
-A simple IDE for coding Lua scripts for the game Transformice!
+A simple IDE for coding Lua scripts for the game Transformice!.
 
 ## Disclaimer
 This is an old private project for coding Lua scripts for the game Transformice! with the help of an simple autocomplete.
