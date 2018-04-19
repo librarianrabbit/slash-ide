@@ -9,7 +9,7 @@ Transformice is a game developed by the company [Atelier 801](http://transformic
 This project is available here in the hope it can be useful but is simply distributed as is, wihtout warrant of any kind, under the GPL v3 license.
 
 ## Notes
-This is an old, abandoned, project and might require code changes to be compiled with newer Qt versions.
+This is an old, project and might require code changes to be compiled with newer Qt versions.
 
 ## Acknowledgements
 This software uses [Qt Toolkit](https://www.qt.io).  
