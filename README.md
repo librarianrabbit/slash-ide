@@ -2,7 +2,7 @@
 A simple IDE for coding Lua scripts for the game Transformice!.
 
 ## Disclaimer
-This is an old private project for coding Lua scripts for the game Transformice! with the help of an simple autocomplete.
+This is an old private project for coding Lua scripts for the game Transformice! with the help of n simple autocomplete feature.
 
 Transformice is a game developed by the company [Atelier 801](http://transformice.com/about-us/index.php). I have no affiliation with their company nor with any of their projects.
 
